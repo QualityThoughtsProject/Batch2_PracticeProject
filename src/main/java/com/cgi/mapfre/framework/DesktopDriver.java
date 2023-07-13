@@ -1,0 +1,109 @@
+package com.cgi.mapfre.framework;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+
+public class DesktopDriver {
+
+
+	static WebDriver remoteDriver = null;
+	
+	public static WebDriver getRemoteDriver(String browser) {
+		
+		try {
+			if (browser.toUpperCase().contains("FIREFOX")) {
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\geckodriver.exe");
+				remoteDriver=new FirefoxDriver();
+			}
+			if (browser.toUpperCase().contains("CHROME")) {
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\chromedriver.exe");
+				remoteDriver=new ChromeDriver();
+			}
+			if (browser.toUpperCase().contains("IE")) {
+				System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"\\IEDriverServer.exe");
+				remoteDriver=new InternetExplorerDriver();
+			}
+			if (browser.toUpperCase().contains("EDGE")) {
+				System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"\\msedgedriver.exe");
+				remoteDriver=new EdgeDriver();
+			}
+			remoteDriver.manage().deleteAllCookies();
+			remoteDriver.manage().window().maximize();
+			TestReport.log(LogStatus.INFO, "Browser Initiated successfully");
+			remoteDriver.get(ProjectConfig.getPropertyValue("url"));
+			
+			remoteDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			TestReport.log(LogStatus.FATAL, "Browser Initiation Failed :" + e.getMessage());
+		}
+		/*//int trycount = 0;
+		String SelHost=ProjectConfig.getPropertyValue("SelHost");
+		DesiredCapabilities desiredCap = null;
+
+		try {
+			if (browser.toUpperCase().contains("FIREFOX")) {
+                desiredCap = DesiredCapabilities.firefox();
+                desiredCap.setCapability("marionette", true);
+                desiredCap.setCapability("acceptInsecureCerts", true);
+                desiredCap.setCapability("proxyType", "proxy");
+			}
+			if (browser.toUpperCase().contains("CHROME")) {
+					System.setProperty("webdriver.chrome.driver",".\\chromedriver.exe");
+					System.out.println("chrome is going to started:::");
+					ChromeOptions options = new ChromeOptions();
+					Map<String, Object> prefs = new HashMap<String, Object>();
+					prefs.put("download.prompt_for_download", false);
+					options.setExperimentalOption("prefs", prefs);
+					desiredCap = DesiredCapabilities.chrome();
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("--start-maximized");
+					options.addArguments("--disable-web-security");
+					options.addArguments("--no-proxy-server");
+					Map<String, Object> prefs = new HashMap<String, Object>();
+					prefs.put("credentials_enable_service", false);
+					prefs.put("profile.password_manager_enabled", false);
+					options.setExperimentalOption("prefs", prefs);
+
+					
+					//desiredCap.setBrowserName("chrome");
+			}
+			if (browser.toUpperCase().contains("IE")) {
+				System.out.println("IE is going to started:::");
+				desiredCap = DesiredCapabilities.internetExplorer();
+				desiredCap.setBrowserName("internet explorer");
+			}
+			if (browser.contains("MicrosoftEdge")) {
+				desiredCap = DesiredCapabilities.edge();
+				desiredCap.setBrowserName("MicrosoftEdge");
+				desiredCap.setCapability("acceptSslCerts", "true");
+			    desiredCap.setCapability(EdgeDriverService.EDGE_DRIVER_EXE_PROPERTY, true);
+				System.out.println("MICROSOFTEDGE Browser Launched");
+			}
+			System.out.println("Host "+SelHost);
+			System.out.println("Desired cap  "+desiredCap);
+			remoteDriver = new RemoteWebDriver(new URL(SelHost), desiredCap);
+			remoteDriver.manage().deleteAllCookies();
+			remoteDriver.manage().window().maximize();
+			TestReport.log(LogStatus.INFO, "Browser Initiated successfully");
+			remoteDriver.get(ProjectConfig.getPropertyValue("url"));
+			//remoteDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			TestReport.log(LogStatus.FATAL, "Browser Initiation Failed :" + e.getMessage());
+		}
+		return remoteDriver;
+	}*/
+		return remoteDriver;
+	}
+}

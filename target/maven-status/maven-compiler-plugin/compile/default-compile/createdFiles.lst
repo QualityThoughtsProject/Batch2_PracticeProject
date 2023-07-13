@@ -1,0 +1,14 @@
+CT\AgencyPortal\App.class
+com\cgi\mapfre\framework\TestReport.class
+com\cgi\mapfre\framework\CommonDef$1.class
+com\cgi\mapfre\framework\MethodDef.class
+com\cgi\mapfre\framework\CommonDef.class
+com\cgi\mapfre\framework\Locators.class
+com\cgi\mapfre\framework\CommonDef$2.class
+com\cgi\mapfre\framework\NewDriver.class
+com\cgi\mapfre\framework\DesktopDriver.class
+com\cgi\mapfre\framework\ProjectConfig.class
+com\cgi\mapfre\framework\DriverFactory.class
+com\cgi\mapfre\framework\CommonMethods.class
+com\cgi\mapfre\framework\TestData.class
+com\cgi\mapfre\framework\TestReport$1.class
