@@ -19,7 +19,5 @@ public class SampleWebdriver {
 		driver.get("https://www.google.com/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);*/
 		
-		List
-		
 	}
 }
