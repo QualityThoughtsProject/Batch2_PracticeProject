@@ -10,6 +10,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class DesktopDriver {
 
@@ -20,19 +22,15 @@ public class DesktopDriver {
 		
 		try {
 			if (browser.toUpperCase().contains("FIREFOX")) {
-				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\geckodriver.exe");
+				WebDriverManager.firefoxdriver().setup();
 				remoteDriver=new FirefoxDriver();
 			}
 			if (browser.toUpperCase().contains("CHROME")) {
-				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\chromedriver.exe");
+				WebDriverManager.chromedriver().setup();
 				remoteDriver=new ChromeDriver();
 			}
-			if (browser.toUpperCase().contains("IE")) {
-				System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"\\IEDriverServer.exe");
-				remoteDriver=new InternetExplorerDriver();
-			}
 			if (browser.toUpperCase().contains("EDGE")) {
-				System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"\\msedgedriver.exe");
+				WebDriverManager.edgedriver().setup();
 				remoteDriver=new EdgeDriver();
 			}
 			remoteDriver.manage().deleteAllCookies();

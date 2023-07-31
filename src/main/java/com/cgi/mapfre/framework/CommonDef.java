@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -85,7 +86,7 @@ public class CommonDef {
 				return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
 			}
 		};
-		Wait<WebDriver> wait = new WebDriverWait(driver, 120);
+		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		try {
 			wait.until(expect);
 		} catch (Exception e) {
@@ -298,7 +299,7 @@ public class CommonDef {
 		
 			driver=DriverFactory.getCurrentDriver();
 			
-		waitVisibleNoError(LocatorValue, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+		waitVisibleNoError(LocatorValue);
 		try {
 			Thread.sleep(1500);
 			if (driver.findElement(LocatorValue).isDisplayed()) {
@@ -355,7 +356,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(by));
 		} catch (Exception e) {
 			DriverFactory.getCurrentDriver().quit();
@@ -367,7 +368,7 @@ public class CommonDef {
 		try {
 				driver=DriverFactory.getCurrentDriver();
 				System.out.println("");
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 			//wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		} catch (Exception e) {
 			DriverFactory.getCurrentDriver().quit();
@@ -381,7 +382,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, sec);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		} catch (Exception e) {
 			DriverFactory.getCurrentDriver().quit();
@@ -393,7 +394,7 @@ public class CommonDef {
 		try{
 				driver=DriverFactory.getCurrentDriver();
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		}catch(Exception e){
 			TestReport.log(LogStatus.FAIL, "Element is visible :" + e.getMessage());
@@ -405,7 +406,7 @@ public class CommonDef {
 			
 				driver=DriverFactory.getCurrentDriver();
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 			TestReport.log(LogStatus.PASS, "Element not visible :" + name);
 		} catch (Exception e) {
@@ -418,7 +419,7 @@ public class CommonDef {
 			
 				driver=DriverFactory.getCurrentDriver();
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(by));
 			System.out.println("Element is clickable " + by);
 		} catch (Exception e) {
@@ -429,7 +430,7 @@ public class CommonDef {
 	public static void waitClickable(By by, String elemname) {
 		try{
 				driver=DriverFactory.getCurrentDriver();
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(by));
 		}catch(Exception e){
 			TestReport.log(LogStatus.ERROR, "Element not clickable");
@@ -443,9 +444,9 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			// WebDriverWait wait = new WebDriverWait(driver,
-			// Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			// Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			return true;
 		} catch (Exception e) {
@@ -459,9 +460,9 @@ public class CommonDef {
 			
 				driver=DriverFactory.getCurrentDriver();
 				
-				WebDriverWait wait = new WebDriverWait(driver, sec);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
 			// WebDriverWait wait = new WebDriverWait(driver,
-			// Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			// Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		} catch (Exception e) {
 			// TestReport.log(LogStatus.ERROR, "Element not visible");
@@ -474,9 +475,9 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			// WebDriverWait wait = new WebDriverWait(driver,
-			// Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			// Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.attributeContains(by, attr, value));
 		} catch (Exception e) {
 			TestReport.log(LogStatus.ERROR, "Element has not switched to the correct attribute to continue");
@@ -490,7 +491,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-		WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(by));
 		} catch (Exception e) {
 			// TestReport.log(LogStatus.ERROR, "Element not visible");
@@ -503,7 +504,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-				WebDriverWait wait = new WebDriverWait(driver, time);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 			wait.until(ExpectedConditions.elementToBeClickable(by));
 		} catch (Exception e) {
 			// TestReport.log(LogStatus.ERROR, "Element not visible");
@@ -516,7 +517,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOf(elem));
 		} catch (Exception e) {
 			TestReport.log(LogStatus.ERROR, "Element not visible");
@@ -529,7 +530,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOf(elem));
 		} catch (Exception e) {
 			DriverFactory.getCurrentDriver().quit();
@@ -548,7 +549,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOf(elem));
 		} catch (Exception e) {
 			DriverFactory.getCurrentDriver().quit();
@@ -562,7 +563,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ProjectConfig.getPropertyValue("timeout")));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOf(elem));
 		} catch (Exception e) {
 			DriverFactory.getCurrentDriver().quit();
@@ -1623,7 +1624,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, 30);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 			TestReport.log(LogStatus.INFO, "Accepted the alert");
@@ -1639,7 +1640,7 @@ public class CommonDef {
 				driver=DriverFactory.getCurrentDriver();
 				
 				
-			WebDriverWait wait = new WebDriverWait(driver, 30);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().dismiss();
 			TestReport.log(LogStatus.INFO, "Dismissed the alert");
