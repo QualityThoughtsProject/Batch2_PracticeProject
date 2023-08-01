@@ -190,4 +190,21 @@ public class CommonMethods {
 		String TestText = new PDFTextStripper().getText(readPdf.getPDDocument());
 
 	}
+	
+	public void clickElement(WebElement ele) {
+		try {
+			ele.click();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void selecctValueFromDropDown(WebElement ele, String value) {
+		try {
+			Select sel = new Select(ele);
+			sel.selectByVisibleText(value);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
