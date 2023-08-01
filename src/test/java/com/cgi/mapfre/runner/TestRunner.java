@@ -10,10 +10,11 @@ import org.junit.runner.RunWith;
 	@CucumberOptions(
 			features = "FeatureFiles", 
 			glue = "com.cgi.mapfre.stepdefinition",
-			plugin = {"pretty","html:target/Reports"},
-			tags="@Smoke",
-			monochrome = true
+			plugin = {"pretty","html:target/Reports"}
+			//tags="@CameraaTC",
+			//monochrome = true
 	)
+
 
 	public class TestRunner {
 	
