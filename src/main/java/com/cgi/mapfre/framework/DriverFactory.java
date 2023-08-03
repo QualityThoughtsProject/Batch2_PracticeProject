@@ -22,13 +22,6 @@ public class DriverFactory {
 		case "CHROME":
 			currentDriver.set(new DesktopDriver().getRemoteDriver(browser));
 			break;
-		case "IE":
-			//System.out.println("inside ie");
-			currentDriver.set(new DesktopDriver().getRemoteDriver(browser));
-			break;
-		case "SAFARI":
-			currentDriver.set(new DesktopDriver().getRemoteDriver(browser));
-			break;
 		case "EDGE":
 			currentDriver.set(new DesktopDriver().getRemoteDriver(browser));
 			break;
