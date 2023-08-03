@@ -1,225 +1,285 @@
 package com.cgi.mapfre.Property.pom;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.cgi.mapfre.framework.CommonMethods;
+
+
 public class DesktopsFindPaths {
 WebDriver driver;
 	
-	@FindBy(xpath="//*[text()='Desktops']") WebElement Desktopsclick;
-	@FindBy(xpath="//*[text()='PC (0)']") WebElement PCTextclick;
-	@FindBy(xpath="//*[text()='Continue']") WebElement Continueclick;
-	@FindBy(xpath="//*[text()='Mac (1)']") WebElement MacClick;
+	@FindBy(xpath="//*[text()='Desktops']") WebElement desktopsClick;
+	@FindBy(xpath="//*[text()='PC (0)']") WebElement pcTextClick;
+	@FindBy(xpath="//*[text()='Continue']") WebElement continueClick;
+	@FindBy(xpath="//*[text()='Mac (1)']") WebElement macClick;
 	@FindBy(xpath="//*[text()='iMac']") WebElement iMacClick;
-	@FindBy(xpath="//*[text()='Show All Desktops']") WebElement ShowAllDesktopclick;
-	@FindBy(xpath="//*[@id='button-list']") WebElement ClickList;
-	@FindBy(xpath="//*[@id='button-grid']")WebElement ClickGrid;
-	@FindBy(xpath="//*[text()='Default']") WebElement Defaultclick;
-	@FindBy(xpath="//*[text()='Name (A - Z)']")WebElement NameAtoZclick;
-	@FindBy(xpath="//*[text()='Name (Z - A)']")WebElement NameZtoAclick;
-	@FindBy(xpath="//*[text()='Price (Low > High)']")WebElement Lowtohighclick;
-	@FindBy(xpath="//*[text()='Price (High > Low)]'")WebElement Hightolowclick;
-	@FindBy(xpath="//*[text()='Rating (Highest)']")WebElement RatingHigstclick;
-	@FindBy(xpath="//*[text()='Rating (Lowest)']") WebElement Ratinglowestclcik;
-	@FindBy(xpath="//*[text()='Model (A - Z)']") WebElement AtoZModelclick;
-	@FindBy(xpath="//*[text()='Model (Z - A)']") WebElement ZtoAModelclick;
+	@FindBy(xpath="//*[text()='Show All Desktops']") WebElement showAllDesktopClick;
+	@FindBy(xpath="//*[@id='button-list']") WebElement clickList;
+	@FindBy(xpath="//*[@id='button-grid']")WebElement clickGrid;
+	@FindBy(xpath="//*[text()='Default']") WebElement defaultClick;
+	@FindBy(xpath="//*[text()='Name (A - Z)']")WebElement nameAtoZClick;
+	@FindBy(xpath="//*[text()='Name (Z - A)']")WebElement nameZtoAClick;
+	@FindBy(xpath="//*[text()='Price (Low > High)']")WebElement lowTohighClick;
+	@FindBy(xpath="//*[text()='Price (High > Low)]'")WebElement highTolowClick;
+	@FindBy(xpath="//*[text()='Rating (Highest)']")WebElement ratingHigstClick;
+	@FindBy(xpath="//*[text()='Rating (Lowest)']") WebElement ratingLowestClcik;
+	@FindBy(xpath="//*[text()='Model (A - Z)']") WebElement atozModelclick;
+	@FindBy(xpath="//*[text()='Model (Z - A)']") WebElement ztoaModelclick;
 	@FindBy(xpath="//*[text()='10']")WebElement value10click;
 	@FindBy(xpath="//*[text()='25']") WebElement value25click;
 	@FindBy(xpath="//*[text()='50']")WebElement value50click;
 	@FindBy(xpath="//*[text()='75']")WebElement value75click;
 	@FindBy(xpath="//*[text()='100']")WebElement value100click;
-	@FindBy(xpath="//*[text()='Apple Cinema 30\"']") WebElement Applecinimaclick;
-	@FindBy(xpath="//*[text()='Canon EOS 5D']") WebElement CanonEOS5Dclick;
-	@FindBy(xpath="//*[text()='HP LP3065']") WebElement HPLP3065click;
-	@FindBy(xpath="//*[text()='HTC Touch HD']")WebElement HTCTouchclick;
-	@FindBy(xpath="//*[text()='iPhone']") WebElement iPhoneclick;
-	@FindBy(xpath="//*[text()='iPod Classic']")WebElement iPodClassicclick;
-	@FindBy(xpath="//*[text()='MacBook']") WebElement MacBookclick;
-	@FindBy(xpath="//*[text()='MacBook Air']")WebElement MacBookAirclick;
-	@FindBy(xpath="//*[text()='Palm Treo Pro']") WebElement PalmTreoproclick;
-	@FindBy(xpath="//*[text()='Product 8']") WebElement product8click;
-	@FindBy(xpath="//*[text()='Samsung SyncMaster 941BW']") WebElement SamsungSyncMasterclick;
-	@FindBy(xpath="//*[text()='Sony VAIO']") WebElement SonyVaioclick;
+	@FindBy(xpath="//*[text()='Apple Cinema 30\"']") WebElement appleCinimaClick;
+	@FindBy(xpath="//*[text()='Canon EOS 5D']") WebElement canonEOS5Dclick;
+	@FindBy(xpath="//*[text()='HP LP3065']") WebElement hpLP3065Click;
+	@FindBy(xpath="//*[text()='HTC Touch HD']")WebElement htcTouchClick;
+	@FindBy(xpath="//*[text()='iPhone']") WebElement iPhoneClick;
+	@FindBy(xpath="//*[text()='iPod Classic']")WebElement iPodClassicClick;
+	@FindBy(xpath="//*[text()='MacBook']") WebElement macBookClick;
+	@FindBy(xpath="//*[text()='MacBook Air']")WebElement macBookAirClick;
+	@FindBy(xpath="//*[text()='Palm Treo Pro']") WebElement palmTreoproClick;
+	@FindBy(xpath="//*[text()='Product 8']") WebElement product8Click;
+	@FindBy(xpath="//*[text()='Samsung SyncMaster 941BW']") WebElement samsungSyncMasterClick;
+	@FindBy(xpath="//*[text()='Sony VAIO']") WebElement sonyVaioClick;
 	
 	public DesktopsFindPaths(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void ClickdesktopsOption() {
-		Desktopsclick.click();
+	public void clickdesktopsOption() {
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
 		
 	}
 	public void clickPCoption() {
-		Desktopsclick.click();
-		PCTextclick.click();
+		CommonMethods page=new CommonMethods();
+		page.element(pcTextClick);
+		
 	}
 		
 		public void clickContinueOption() {
-			Desktopsclick.click();
-			PCTextclick.click();
-			Continueclick.click();
+			CommonMethods page=new CommonMethods();
+			page.element(desktopsClick);
+			page.element(pcTextClick);
+			page.element(continueClick);
+			
 		}
 		
 	public void clickMacOption() {
-		Desktopsclick.click();
-		MacClick.click();
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
+		page.element(macClick);
 	}
 	
 	public void clickiMacOption() {
-		Desktopsclick.click();
-		iMacClick.click();
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
+		page.element(iMacClick);
+		
 	}
 	public void clickShowAlldesktopsOption() {
-		Desktopsclick.click();
-		ShowAllDesktopclick.click();
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		
 	}
 	
 	public void clickListOption() {
-		Desktopsclick.click();
-		ShowAllDesktopclick.click();
-		ClickList.click();
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(clickList);
+		
 	}
 	public void clickGridOption() {
-		Desktopsclick.click();
-		ShowAllDesktopclick.click();
-		ClickGrid.click();
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(clickGrid);
 	}
-  public void clickDefaultOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	Defaultclick.click();
-}
-  public void clickNameAtoZOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  NameAtoZclick.click();
-  }
-  public void clickNameZtoAOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  NameZtoAclick.click();
-  }
-  public void LowtoHeighOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  Lowtohighclick.click();
-  }
-  public void HightolowOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  Hightolowclick.click();
-  }
-  public void clickRatingHigstOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  RatingHigstclick.click();
-  }
+	
+	public void clickOption(String Option) {
+		CommonMethods page=new CommonMethods();
+		page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(nameAtoZClick);
+		}
   
-  public void clickLowestOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  Ratinglowestclcik.click();
-  }
-  
-  public void clickAtoZmodelOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  AtoZModelclick.click();
+  public void clickNameZtoAOption(String Option) {
+	  CommonMethods page=new CommonMethods();
+	    page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(nameZtoAClick);
 	  
   }
-  public void clickZtomodelAOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  ZtoAModelclick.click();
+  public void LowtoHeighOption(String Option) {
+	  CommonMethods page=new CommonMethods();
+	    page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+	    page.element(lowTohighClick);
+	  
+  }
+  public void HightolowOption(String Option) {
+	   CommonMethods page=new CommonMethods();
+	    page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(highTolowClick);   
+  }
+  public void clickRatingHigstOption(String Option) {
+	  
+	  CommonMethods page=new CommonMethods();
+	    page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(ratingHigstClick);
+	  
   }
   
-  public void clickvalue10option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  value10click.click();
+  public void clickLowestOption(String Option) {
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(ratingLowestClcik);
+	 
   }
-  public void clickvalue25option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  value25click.click();
+  
+  public void clickAtoZmodelOption(String Option) {
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(atozModelclick);
+	  
   }
-  public void clickvalue50option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  value50click.click();
+  public void clickZtomodelAOption(String Option) {
+	   CommonMethods page=new CommonMethods();
+	   page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(ztoaModelclick);
+	 
   }
-  public void clickvalue75option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  value75click.click();
+  
+  public void clickvalue10option(int value) {
+	  CommonMethods page=new CommonMethods();
+	   page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(value10click);
+	  
+	  
   }
-  public void clickvalue100option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  value100click.click();
+  public void clickvalue25option(int value) {
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(value25click);
+	 
+  }
+  public void clickvalue50option(int value) {
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(value50click);
+	
+  }
+  public void clickvalue75option(int value) {
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(value75click);
+	 
+  }
+  public void clickvalue100option(int value) {
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(value100click);
+	  
   }
   public void applecinimaoption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  Applecinimaclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(appleCinimaClick);
   }
   public void CanonEOSoption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  CanonEOS5Dclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(canonEOS5Dclick);
   }
   public void HPLP3Option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  HPLP3065click.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(hpLP3065Click);
   }
   public void HTCTouchOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  HTCTouchclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(htcTouchClick);
+	 
   }
   public void iPhoneclick() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  iPhoneclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(iPhoneClick);
+	 
   }
   public void iPadClassisoption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  iPodClassicclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(iPodClassicClick);
+	  
   }
   public void MacBookClickOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  MacBookclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(macBookClick);
+	 
   }
   public void MacbookAiroption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  MacBookAirclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(macBookAirClick);
+	  
+	 
   }
   public void PlamtreProOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  PalmTreoproclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(palmTreoproClick);
+	 
   }
   public void Product8Option() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  product8click.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(product8Click);
+	 
   }
   public void SamsungSyncMasterOption () {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  SamsungSyncMasterclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(samsungSyncMasterClick);
+	
   }
   public void SonyVaioOption() {
-	  Desktopsclick.click();
-	  ShowAllDesktopclick.click();
-	  SonyVaioclick.click();
+	  CommonMethods page=new CommonMethods();
+	  page.element(desktopsClick);
+		page.element(showAllDesktopClick);
+		page.element(sonyVaioClick);
+	 
   }
 
 

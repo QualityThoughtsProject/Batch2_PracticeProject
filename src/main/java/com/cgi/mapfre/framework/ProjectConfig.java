@@ -1,10 +1,9 @@
 package com.cgi.mapfre.framework;
 
-import java.io.File;
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+
+
 import java.util.Properties;
 
 
@@ -15,7 +14,7 @@ public class ProjectConfig {
 		try {
 			filepath = System.getProperty("user.dir");
 				System.out.println(filepath);
-				filepath = filepath + "\\src\\main\\java\\com\\cgi\\mapfre\\framework\\projectconfig.properties";
+				filepath = filepath + "\\src\\main\\java\\com\\cgi\\mapfre\\framework\\ProjectConfig.properties";
 				prop.load(new FileInputStream(filepath));
 		} catch (Exception e) {
 			e.printStackTrace();

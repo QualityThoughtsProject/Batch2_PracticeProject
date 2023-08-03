@@ -1,5 +1,6 @@
 package com.cgi.mapfre.framework;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class DesktopDriver {
 
 	static WebDriver remoteDriver = null;
 	
-	public static WebDriver getRemoteDriver(String browser) {
+	public  WebDriver getRemoteDriver(String browser) {
 		
 		try {
 			if (browser.toUpperCase().contains("FIREFOX")) {
@@ -38,7 +39,7 @@ public class DesktopDriver {
 			TestReport.log(LogStatus.INFO, "Browser Initiated successfully");
 			remoteDriver.get(ProjectConfig.getPropertyValue("url"));
 			
-			remoteDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			remoteDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			
 		}catch(Exception e){
 			e.printStackTrace();
