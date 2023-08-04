@@ -1,6 +1,8 @@
 package com.cgi.mapfre.Property.pom;
 
-	import org.openqa.selenium.WebDriver;
+	
+
+import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.FindBy;
 	import org.openqa.selenium.support.PageFactory;
@@ -48,50 +50,50 @@ package com.cgi.mapfre.Property.pom;
 		@FindBy(xpath = "//a[text()='Sort By']")WebElement sortLnk;
 		@FindBy(className = "//select[@class=\'form-select\']")WebElement sortResult;
 		
-		@FindBy(id = "//select[@id='input-sort']")WebElement dropdownLnk;
-		@FindBy(xpath = "//a[text()='Default']")WebElement defaultLnk;
+		@FindBy(xpath = "//select[@id='input-sort']") private WebElement DropDownlnk;
+//		@FindBy(xpath = "//a[text()='Default']")WebElement defaultLnk;
 		
 		@FindBy(xpath = "//a[text()='Name (A - Z)']")WebElement atozLnk;
-		@FindBy(xpath = "//a[text()='Name (A - Z)']")WebElement atozresult;
+//		@FindBy(xpath = "//a[text()='Name (A - Z)']")WebElement atozresult;
 		
 		@FindBy(xpath = "//a[text()='Name (Z - A)']")WebElement ztoaLnk;
-		@FindBy(xpath = "//a[text()='Name (Z - A)']")WebElement ztoaresult;
+//		@FindBy(xpath = "//a[text()='Name (Z - A)']")WebElement ztoaresult;
 		
 		@FindBy(xpath = "//a[text()='Price (Low > High)']")WebElement pricelowLnk;
-		@FindBy(xpath = "//a[text()='Price (Low > High)']")WebElement pricelowresult;
+//		@FindBy(xpath = "//a[text()='Price (Low > High)']")WebElement pricelowresult;
 		
 		@FindBy(xpath = "//a[text()='Price (High > Low)']")WebElement pricehighLnk;
-		@FindBy(xpath = "//a[text()='Price (High > Low)']")WebElement pricehighresult;
+//		@FindBy(xpath = "//a[text()='Price (High > Low)']")WebElement pricehighresult;
 		
 		@FindBy(xpath = "//a[text()='Rating (Highest)']")WebElement ratinghighLnk;
-		@FindBy(xpath = "//a[text()='Rating (Highest)']")WebElement ratinghighresult;
+//		@FindBy(xpath = "//a[text()='Rating (Highest)']")WebElement ratinghighresult;
 		
 		@FindBy(xpath = "//a[text()='Rating (Lowest)']")WebElement ratinglowLnk;
-		@FindBy(xpath = "//a[text()='Rating (Lowest)']")WebElement ratinglowresult;
+//		@FindBy(xpath = "//a[text()='Rating (Lowest)']")WebElement ratinglowresult;
 		
 		@FindBy(xpath = "//a[text()='Model (A - Z)']")WebElement modelLnk;
-		@FindBy(xpath = "//a[text()='Model (A - Z)']")WebElement modelresult;
+//		@FindBy(xpath = "//a[text()='Model (A - Z)']")WebElement modelresult;
 		
 		@FindBy(xpath = "//a[text()='Model (Z - A)']")WebElement modelzLnk;
-		@FindBy(xpath = "//a[text()='Model (Z - A)']")WebElement modelzresult;
+//		@FindBy(xpath = "//a[text()='Model (Z - A)']")WebElement modelzresult;
 		
 		@FindBy(id = "//select[@id=\'input-limit\']")WebElement dropdow2nLnk;
 		@FindBy(xpath = "//a[text()='Show']")WebElement showLnk;
 		
 		@FindBy(xpath = "//a[text()='10']")WebElement tenLnk;
-		@FindBy(xpath = "//a[text()='10']")WebElement tenresult;
+//		@FindBy(xpath = "//a[text()='10']")WebElement tenresult;
 		
 		@FindBy(xpath = "//a[text()='25']")WebElement twentyfiveLnk;
-		@FindBy(xpath = "//a[text()='25']")WebElement twentyfiveresult;
+//		@FindBy(xpath = "//a[text()='25']")WebElement twentyfiveresult;
 		
 		@FindBy(xpath = "//a[text()='50']")WebElement fiftyLnk;
-		@FindBy(xpath = "//a[text()='50']")WebElement fiftyresult;
+//		@FindBy(xpath = "//a[text()='50']")WebElement fiftyresult;
 		
 		@FindBy(xpath = "//a[text()='75']")WebElement seventyfiveLnk;
-		@FindBy(xpath = "//a[text()='75']")WebElement seventyfiveresult;
+//		@FindBy(xpath = "//a[text()='75']")WebElement seventyfiveresult;
 		
 		@FindBy(xpath = "//a[text()='100']")WebElement HundredLnk;
-		@FindBy(xpath = "//a[text()='100']")WebElement hundredresult;
+//		@FindBy(xpath = "//a[text()='100']")WebElement hundredresult;
 		
 		public PhonesApplication(WebDriver driver) {
 			this.driver = driver;
@@ -231,112 +233,78 @@ package com.cgi.mapfre.Property.pom;
 			Assert.assertEquals( sortResult.getText(), "form-select");
 		}
 		
-		public void clickDefaultOption(WebElement ele,String option) {
+		public void clickDefaultOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("input-sort")) {
-				commons.selecctValueFromDropDown(dropdownLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(DropDownlnk, value);
 		}
-		public void verifyDefaultResults() {
-			Assert.assertEquals( defaultLnk.getText(), "Default");
+		public void verifyDefaultResults(String value) {
+			Assert.assertEquals( DropDownlnk.getText(), value);
 		}
 		
-		public void clickAtoZOption(WebElement ele,String option) {
+		public void clickAtoZOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Name (A - Z)")) {
-				commons.selecctValueFromDropDown(atozLnk, option);
-			} else {
-				System.out.println("No option");
+				commons.selecctValueFromDropDown(atozLnk, value);
 			}    
-		}
-		public void verifyAtoZResults() {
-			Assert.assertEquals( atozresult.getText(), "Name (A - Z)");
+		
+		public void verifyAtoZResults(String value) {
+			Assert.assertEquals( atozLnk.getText(), value);
 		}
 		
-		public void clickZtoAOption(String option) {
+		public void clickZtoAOption(String value) {
 			CommonMethods commons = new CommonMethods();
-				if(ztoaLnk.getText().equals(option)) {
-				commons.selecctValueFromDropDown(ztoaLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(ztoaLnk, value);
+			   
 		}
-		public void verifyZtoAResults() {
-			Assert.assertEquals( ztoaresult.getText(), "Name (Z - A)");
+		public void verifyZtoAResults(String value) {
+			Assert.assertEquals( ztoaLnk.getText(), value);
 		}
 		
-		public void clickPriceLowOption(WebElement ele,String option) {
+		public void clickPriceLowOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Price (Low > High)")) {
-				commons.selecctValueFromDropDown(pricelowLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(pricelowLnk, value);
 		}
-		public void verifyPriceLowResults() {
-			Assert.assertEquals( pricelowresult.getText(), "Price (Low > High)");
+		public void verifyPriceLowResults(String value) {
+			Assert.assertEquals( pricelowLnk.getText(), value);
 		}
 		
-		public void clickPriceHighOption(WebElement ele,String option) {
+		public void clickPriceHighOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Price (High > Low)")) {
-				commons.selecctValueFromDropDown(pricehighLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(pricehighLnk, value);
 		}
-		public void verifyPriceHighResults() {
-			Assert.assertEquals( pricehighresult.getText(), "Price (High > Low)");
+		public void verifyPriceHighResults(String value) {
+			Assert.assertEquals( pricehighLnk.getText(),value);
 		}
 		
-		public void clickRateHighOption(WebElement ele,String option) {
+		public void clickRateHighOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Rating (Highest)")) {
-				commons.selecctValueFromDropDown(ratinghighLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(ratinghighLnk, value); 
 		}
-		public void verifyRateHighResults() {
-			Assert.assertEquals( ratinghighresult.getText(), "Rating (Highest)");
+		public void verifyRateHighResults(String value) {
+			Assert.assertEquals( ratinghighLnk.getText(),value);
 		}
 		
-		public void clickRateLowOption(WebElement ele,String option) {
+		public void clickRateLowOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Rating (Lowest)")) {
-				commons.selecctValueFromDropDown(ratinglowLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(ratinglowLnk, value); 
 		}
-		public void verifyRateLowResults() {
-			Assert.assertEquals( ratinglowresult.getText(), "Rating (Lowest)");
+		public void verifyRateLowResults(String value) {
+			Assert.assertEquals( ratinglowLnk.getText(),value);
 		}
 		
-		public void clickModelOption(WebElement ele,String option) {
+		public void clickModelOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Model (A - Z)")) {
-				commons.selecctValueFromDropDown(modelLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(modelLnk, value); 
 		}
-		public void verifyModelResults() {
-			Assert.assertEquals( modelresult.getText(), "Model (A - Z)");
+		public void verifyModelResults(String value) {
+			Assert.assertEquals( modelLnk.getText(), value);
 		}
 		
-		public void clickModelZOption(WebElement ele,String option) {
+		public void clickModelZOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("Model (Z - A)")) {
-				commons.selecctValueFromDropDown(modelzLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(modelzLnk, value);  
 		}
-		public void verifyModelZResults() {
-			Assert.assertEquals( modelzresult.getText(), "Model (Z - A)");
+		public void verifyModelZResults(String value) {
+			Assert.assertEquals( modelzLnk.getText(),value );
 		}
 		
 		public void clickShowOption(String option) {
@@ -351,64 +319,44 @@ package com.cgi.mapfre.Property.pom;
 			Assert.assertEquals( showLnk.getText(), "Show");
 		}
 		
-		public void clickTenOption(WebElement ele,String option) {
+		public void clickTenOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("10")) {
-				commons.selecctValueFromDropDown(tenLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(tenLnk, value);  
 		}
-		public void verifyTenResults() {
-			Assert.assertEquals( tenresult.getText(), "10");
+		public void verifyTenResults(String value) {
+			Assert.assertEquals( tenLnk.getText(), "10");
 		}
 		
-		public void clickTwentyOption(WebElement ele,String option) {
+		public void clickTwentyOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("25")) {
-				commons.selecctValueFromDropDown(twentyfiveLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(twentyfiveLnk, value); 
 		}
-		public void verifyTwentyResults() {
-			Assert.assertEquals( twentyfiveresult.getText(), "25");
+		public void verifyTwentyResults(String value) {
+			Assert.assertEquals( twentyfiveLnk.getText(), "25");
 		}
 		
-		public void clickFiftyOption(WebElement ele,String option) {
+		public void clickFiftyOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("50")) {
-				commons.selecctValueFromDropDown(fiftyLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(fiftyLnk, value);  
 		}
-		public void verifyFiftyResults() {
-			Assert.assertEquals( fiftyresult.getText(), "50");
+		public void verifyFiftyResults(String value) {
+			Assert.assertEquals( fiftyLnk.getText(), "50");
 		}
 		
-		public void clickSeventyOption(WebElement ele,String option) {
+		public void clickSeventyOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("75")) {
-				commons.selecctValueFromDropDown(seventyfiveLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(seventyfiveLnk, value);  
 		}
-		public void verifySeventyResults() {
-			Assert.assertEquals( seventyfiveresult.getText(), "75");
+		public void verifySeventyResults(String value) {
+			Assert.assertEquals( seventyfiveLnk.getText(), "75");
 		}
 		
-		public void clickHundredOption(WebElement ele,String option) {
+		public void clickHundredOption(String value) {
 			CommonMethods commons = new CommonMethods();
-			if (option.equals("100")) {
-				commons.selecctValueFromDropDown(HundredLnk, option);
-			} else {
-				System.out.println("No option");
-			}    
+				commons.selecctValueFromDropDown(HundredLnk, value);
 		}
-		public void verifyHundredResults() {
-			Assert.assertEquals( hundredresult.getText(), "100");
+		public void verifyHundredResults(String value) {
+			Assert.assertEquals( HundredLnk.getText(), "100");
 		}
 	}
 

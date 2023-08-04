@@ -139,23 +139,23 @@ public class PhonesStepsDef implements En  {
 
 		When("User select the Dropdown option", () -> {
 			PhonesApplication Default = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Default.clickDefaultOption(null, "option");
+			Default.clickDefaultOption("Default");
 		});
 
 		Then("Default value should be displayed", () -> {
 			PhonesApplication Default = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Default.verifyDefaultResults();
+			Default.verifyDefaultResults("Default");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the Name\\(A - Z) value in Dropdown option", () -> {
 			PhonesApplication name = new PhonesApplication(DriverFactory.getCurrentDriver());
-			name.clickAtoZOption(null, "option");
+			name.clickAtoZOption("Name (A - Z)"); 
 		});
 
 		Then("Name \\(A - Z) value should be displayed", () -> {
 			PhonesApplication name = new PhonesApplication(DriverFactory.getCurrentDriver());
-			name.verifyAtoZResults();
+			name.verifyAtoZResults("Name (A - Z)");
 			DriverFactory.closeDriver();
 		});
 
@@ -166,73 +166,73 @@ public class PhonesStepsDef implements En  {
 
 		Then("Name \\(Z - A) value should be displayed", () -> {
 			PhonesApplication nameza = new PhonesApplication(DriverFactory.getCurrentDriver());
-			nameza.verifyZtoAResults();
+			nameza.verifyZtoAResults( "Name (Z - A)");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the  Price\\(Low>High) value in Dropdown option", () -> {
 			PhonesApplication Pricelow = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Pricelow.clickPriceLowOption(null, "option");
+			Pricelow.clickPriceLowOption("Price (Low > High)");
 		});
 
 		Then("Price \\(Low > High) value should be displayed", () -> {
 			PhonesApplication Pricelow = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Pricelow.verifyPriceLowResults();
+			Pricelow.verifyPriceLowResults("Price (Low > High)");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the Price\\(High>Low) value in Dropdown option", () -> {
 			PhonesApplication Pricehigh = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Pricehigh.clickPriceHighOption(null, "option");
+			Pricehigh.clickPriceHighOption("Price (High > Low)");
 		});
 
 		Then("Price \\(High > Low) value should be displayed", () -> {
 			PhonesApplication Pricehigh = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Pricehigh.verifyPriceHighResults();
+			Pricehigh.verifyPriceHighResults("Price (High > Low)");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the Rating\\(Highest) value in Dropdown option", () -> {
 			PhonesApplication ratinghigh = new PhonesApplication(DriverFactory.getCurrentDriver());
-			ratinghigh.clickRateHighOption(null, "option");
+			ratinghigh.clickRateHighOption("Rating (Highest)");
 		});
 
 		Then("Rating \\(Highest) value should be displayed", () -> {
 			PhonesApplication ratinghigh = new PhonesApplication(DriverFactory.getCurrentDriver());
-			ratinghigh.verifyRateHighResults();
+			ratinghigh.verifyRateHighResults("Rating (Highest)");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the Rating\\(Lowest) value in Dropdown option", () -> {
 			PhonesApplication ratinglow = new PhonesApplication(DriverFactory.getCurrentDriver());
-			ratinglow.clickRateLowOption(null, "option");
+			ratinglow.clickRateLowOption("Rating (Lowest)");
 		});
 
 		Then("Rating \\(Lowest) value should be displayed", () -> {
 			PhonesApplication ratinglow = new PhonesApplication(DriverFactory.getCurrentDriver());
-			ratinglow.verifyRateLowResults();
+			ratinglow.verifyRateLowResults("Rating (Lowest)");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the  Model\\(A - Z) value in Dropdown option", () -> {
 			PhonesApplication model = new PhonesApplication(DriverFactory.getCurrentDriver());
-			model.clickModelOption(null, "option");
+			model.clickModelOption("Model (A - Z)");
 		});
 
 		Then("Model \\(A - Z) value should be displayed", () -> {
 			PhonesApplication model = new PhonesApplication(DriverFactory.getCurrentDriver());
-			model.verifyAtoZResults();
+			model.verifyModelResults("Model (A - Z)");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the Model\\(Z - A) value in Dropdown option", () -> {
 			PhonesApplication modelz = new PhonesApplication(DriverFactory.getCurrentDriver());
-			modelz.clickModelZOption(null, "option");
+			modelz.clickModelZOption("Model (Z - A)");
 		});
 
 		Then("Model \\(Z - A) value should be displayed", () -> {
 			PhonesApplication modelz = new PhonesApplication(DriverFactory.getCurrentDriver());
-			modelz.verifyModelZResults();
+			modelz.verifyModelZResults("Model (Z - A)");
 			DriverFactory.closeDriver();
 		});
 
@@ -249,56 +249,56 @@ public class PhonesStepsDef implements En  {
 
 		When("User select the value Ten in Dropdown option", () -> {
 			PhonesApplication ten = new PhonesApplication(DriverFactory.getCurrentDriver());
-			ten.clickTenOption(null, "option");
+			ten.clickTenOption("10");
 		});
 
 		Then("Ten should be displayed", () -> {
 			PhonesApplication ten = new PhonesApplication(DriverFactory.getCurrentDriver());
-			ten.verifyTenResults();
+			ten.verifyTenResults("10");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the value TwentyFive in Dropdown option", () -> {
 			PhonesApplication twenty = new PhonesApplication(DriverFactory.getCurrentDriver());
-			twenty.clickTwentyOption(null, "option");
+			twenty.clickTwentyOption("25");
 		});
 
 		Then("TwentyFive should be displayed", () -> {
 			PhonesApplication twenty = new PhonesApplication(DriverFactory.getCurrentDriver());
-			twenty.verifyTwentyResults();
+			twenty.verifyTwentyResults("25");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the value FIfty in Dropdown option", () -> {
 			PhonesApplication FIfty = new PhonesApplication(DriverFactory.getCurrentDriver());
-			FIfty.clickFiftyOption(null, "option");
+			FIfty.clickFiftyOption("50");
 		});
 
 		Then("FIfty should be displayed", () -> {
 			PhonesApplication FIfty = new PhonesApplication(DriverFactory.getCurrentDriver());
-			FIfty.verifyFiftyResults();
+			FIfty.verifyFiftyResults("50");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the value Seventyfive in Dropdown option", () -> {
 			PhonesApplication Seventyfive = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Seventyfive.clickSeventyOption(null, "option");
+			Seventyfive.clickSeventyOption("75");
 		});
 
 		Then("Seventyfive should be displayed", () -> {
 			PhonesApplication Seventyfive = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Seventyfive.verifyFiftyResults();
+			Seventyfive.verifyFiftyResults("75");
 			DriverFactory.closeDriver();
 		});
 
 		When("User select the value Hundred in Dropdown option", () -> {
 			PhonesApplication Hundred = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Hundred.clickHundredOption(null, "option");
+			Hundred.clickHundredOption("100");
 		});
 
 		Then("Hundred should be displayed", () -> {
 			PhonesApplication Hundred = new PhonesApplication(DriverFactory.getCurrentDriver());
-			Hundred.verifyHundredResults();
+			Hundred.verifyHundredResults("100");
 			DriverFactory.closeDriver();
 		});
 

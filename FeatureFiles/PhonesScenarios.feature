@@ -55,10 +55,22 @@ Feature: Phone feature files
     Then Exechange Scucess message Should be displayed 
 
   @Testcases11
-  Scenario: Phones & PDAs feature
-    When User select the SortBy option
+  Scenario Outline: Phones & PDAs feature
+    When User select the <SortBy> option
     Then sorting should be happen
-
+    
+    Examples:
+    |SortBy            |
+    |Default           |
+    |Name (A - Z)      |
+    |Name (Z - A)      |
+    |Price (Low > High)|
+    |Price (High > Low)|
+    |Rating (Highest)  | 
+    |Rating (Lowest)   |
+    |Model (A - Z)     |
+    |Model (Z - A)     |
+    
   @Testcases12
   Scenario: Phones & PDAs feature
     When User select the Dropdown option
@@ -105,10 +117,19 @@ Feature: Phone feature files
     Then Model (Z - A) value should be displayed
 
   @Testcases21
-  Scenario: Phones & PDAs feature 
-    When User select the Show option
+  Scenario Outline: Phones & PDAs feature 
+    When User select the <Show> option
     Then value should be displayed
-
+    
+ Examples:
+    |Show|
+    |10  |
+    |25  |
+    |50  |
+    |75  |
+    |100 |
+    
+    
   @Testcases22
   Scenario: Phones & PDAs feature
     When User select the value Ten in Dropdown option
