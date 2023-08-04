@@ -1,11 +1,11 @@
 package com.cgi.mapfre.Property.pom;
 
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.cgi.mapfre.framework.CommonMethods;
 
 
@@ -52,234 +52,294 @@ WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickdesktopsOption() {
-		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
+	public void clickDesktopsOption() {
+		desktopsClick.click();
+		//CommonMethods page=new CommonMethods();
+		//page.selectFromDropDownValue(desktopsClick, null);
 		
 	}
-	public void clickPCoption() {
-		CommonMethods page=new CommonMethods();
-		page.element(pcTextClick);
+	public void clickPcOption() {
+		desktopsClick.click();
+		pcTextClick.click();
 		
+		//CommonMethods page=new CommonMethods();
+		//page.selectFromDropDownValue(desktopsClick, null);
+		//page.selectFromDropDownValue(pcTextClick, null);
 	}
-		
+	
 		public void clickContinueOption() {
-			CommonMethods page=new CommonMethods();
-			page.element(desktopsClick);
-			page.element(pcTextClick);
-			page.element(continueClick);
+			desktopsClick.click();
+			pcTextClick.click();
+			continueClick.click();
 			
-		}
+			//CommonMethods page=new CommonMethods();
+			//page.selectFromDropDownValue(desktopsClick, null);
+			//page.selectFromDropDownValue(pcTextClick, null);
+			//page.selectFromDropDownValue(continueClick, null);
+			}
 		
-	public void clickMacOption() {
-		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
-		page.element(macClick);
-	}
+	   public void clickMacOption() {
+		   desktopsClick.click();
+		   pcTextClick.click();
+		   macClick.click();
+		   
+		    //CommonMethods page=new CommonMethods();
+		   //page.selectFromDropDownValue(desktopsClick, null);
+		   //page.selectFromDropDownValue(pcTextClick, null);
+		   //page.selectFromDropDownValue(macClick, null);
+		}
 	
 	public void clickiMacOption() {
-		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
-		page.element(iMacClick);
+		desktopsClick.click();
+		pcTextClick.click();
+		iMacClick.click();
 		
+		//CommonMethods page=new CommonMethods();
+		//page.selectFromDropDownValue(desktopsClick, null);
+		//page.selectFromDropDownValue(pcTextClick, null);
+		//page.selectFromDropDownValue(iMacClick, null);
 	}
 	public void clickShowAlldesktopsOption() {
-		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		
-	}
+		desktopsClick.click();
+		showAllDesktopClick.click();
+		//CommonMethods page=new CommonMethods();
+		//page.selectFromDropDownValue(desktopsClick, null);
+		//page.selectFromDropDownValue(showAllDesktopClick, null);
+		}
 	
 	public void clickListOption() {
-		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(clickList);
+		desktopsClick.click();
+		showAllDesktopClick.click();
+		clickList.click();
 		
-	}
+		
+		//CommonMethods page=new CommonMethods();
+		//page.selectFromDropDownValue(desktopsClick, null);
+		//page.selectFromDropDownValue(showAllDesktopClick, null);
+		//page.selectFromDropDownValue(clickList, null);
+		}
+	
 	public void clickGridOption() {
-		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(clickGrid);
+		desktopsClick.click();
+		showAllDesktopClick.click();
+		clickGrid.click();
+		
+		//CommonMethods page=new CommonMethods();
+		//page.selectFromDropDownValue(desktopsClick, null);
+		//page.selectFromDropDownValue(showAllDesktopClick, null);
+		//page.selectFromDropDownValue(clickGrid, null);
 	}
 	
-	public void clickOption(String Option) {
+	public void clickSortingOption(WebElement ele,String option) {
 		CommonMethods page=new CommonMethods();
-		page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(nameAtoZClick);
+		page.selectFromDropDownValue(desktopsClick, option);
+		page.selectFromDropDownValue(showAllDesktopClick, option);
+		page.selectFromDropDownValue(nameAtoZClick, option);
+		page.selectFromDropDownValue(nameZtoAClick,option);
+		page.selectFromDropDownValue(lowTohighClick, option);
+		page.selectFromDropDownValue(highTolowClick, option);
+		page.selectFromDropDownValue(ratingHigstClick, option);
+		page.selectFromDropDownValue(ratingLowestClcik, option);
+		page.selectFromDropDownValue(atozModelclick, option);
+		page.selectFromDropDownValue(ztoaModelclick, option);
+		page.selectFromDropDownValue(value10click, option);
+		page.selectFromDropDownValue(value25click, option);
+		page.selectFromDropDownValue(value50click, option);
+		page.selectFromDropDownValue(value75click, option);
+		page.selectFromDropDownValue(value100click, option);
 		}
   
-  public void clickNameZtoAOption(String Option) {
-	  CommonMethods page=new CommonMethods();
-	    page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(nameZtoAClick);
+ /* public void clickNameZtoAOption(String Option) {
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(nameZtoAClick);
 	  
   }
+  
   public void LowtoHeighOption(String Option) {
-	  CommonMethods page=new CommonMethods();
-	    page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-	    page.element(lowTohighClick);
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+	    CommonDef.click(lowTohighClick);
 	  
   }
+  
   public void HightolowOption(String Option) {
-	   CommonMethods page=new CommonMethods();
-	    page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(highTolowClick);   
+	    CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(highTolowClick);   
   }
   public void clickRatingHigstOption(String Option) {
-	  
-	  CommonMethods page=new CommonMethods();
-	    page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(ratingHigstClick);
+	    CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(ratingHigstClick);
 	  
   }
   
   public void clickLowestOption(String Option) {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(ratingLowestClcik);
+	    CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(ratingLowestClcik);
 	 
   }
   
   public void clickAtoZmodelOption(String Option) {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(atozModelclick);
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(atozModelclick);
 	  
   }
   public void clickZtomodelAOption(String Option) {
-	   CommonMethods page=new CommonMethods();
-	   page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(ztoaModelclick);
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(ztoaModelclick);
 	 
   }
   
-  public void clickvalue10option(int value) {
-	  CommonMethods page=new CommonMethods();
-	   page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(value10click);
+  public void clickvalue10option(String Option) {
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(value10click);
 	  
 	  
   }
-  public void clickvalue25option(int value) {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(value25click);
+  public void clickvalue25option(String Option) {
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(value25click);
 	 
   }
   public void clickvalue50option(int value) {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(value50click);
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(value50click);
 	
   }
   public void clickvalue75option(int value) {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(value75click);
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(value75click);
 	 
   }
   public void clickvalue100option(int value) {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(value100click);
+	  CommonDef.click(desktopsClick);
+		CommonDef.click(showAllDesktopClick);
+		CommonDef.click(value100click);
 	  
   }
+  */
   public void applecinimaoption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(appleCinimaClick);
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  appleCinimaClick.click();
+	  
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(appleCinimaClick, null);
   }
-  public void CanonEOSoption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(canonEOS5Dclick);
+  public void canonEOSoption() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  canonEOS5Dclick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(canonEOS5Dclick, null);
   }
-  public void HPLP3Option() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(hpLP3065Click);
+  public void hpLP3Option() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  hpLP3065Click.click();
+	    //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(hpLP3065Click, null);
   }
-  public void HTCTouchOption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(htcTouchClick);
-	 
+  public void htcTouchOption() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  htcTouchClick.click();
+	  
+	  //CommonMethods page=new CommonMethods();
+	   //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(htcTouchClick, null);
   }
   public void iPhoneclick() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(iPhoneClick);
-	 
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  iPhoneClick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(defaultClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(iPhoneClick, null);
   }
   public void iPadClassisoption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(iPodClassicClick);
-	  
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  iPodClassicClick.click();
+	  // CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(iPodClassicClick, null);
   }
-  public void MacBookClickOption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(macBookClick);
+  public void macBookClickOption() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  macBookClick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(macBookClick, null);
 	 
   }
-  public void MacbookAiroption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(macBookAirClick);
-	  
+  public void macbookAiroption() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  macBookAirClick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(macBookAirClick, null);
 	 
   }
-  public void PlamtreProOption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(palmTreoproClick);
-	 
-  }
-  public void Product8Option() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(product8Click);
-	 
-  }
-  public void SamsungSyncMasterOption () {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(samsungSyncMasterClick);
+  public void plamtreProOption() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  palmTreoproClick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(palmTreoproClick, null);
 	
   }
-  public void SonyVaioOption() {
-	  CommonMethods page=new CommonMethods();
-	  page.element(desktopsClick);
-		page.element(showAllDesktopClick);
-		page.element(sonyVaioClick);
-	 
+  public void product8Option() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  product8Click.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(product8Click, null);
+  }
+  public void samsungSyncMasterOption () {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  samsungSyncMasterClick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(samsungSyncMasterClick, null);
+	
+  }
+  public void sonyVaioOption() {
+	  desktopsClick.click();
+	  showAllDesktopClick.click();
+	  sonyVaioClick.click();
+	  //CommonMethods page=new CommonMethods();
+	  //page.selectFromDropDownValue(desktopsClick, null);
+	  //page.selectFromDropDownValue(showAllDesktopClick, null);
+	  //page.selectFromDropDownValue(sonyVaioClick, null);
   }
 
 

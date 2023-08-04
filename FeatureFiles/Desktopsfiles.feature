@@ -63,7 +63,7 @@ Feature: OpenCart project
   @testcase9
   Scenario Outline: validating Sorting Feature
     When User search for the desktops products
-    And User sort with <Show Option>
+    And User sort with "<Show Option>"
     Then User is able to sort the products
 
     Examples: 

@@ -151,16 +151,8 @@ public class CommonMethods {
 		}
 
 	}
-	
-	public  void element(WebElement ele) {
-		try {
-			ele.click();
-		}catch (Exception e) {
-			
-		}
-		}
-	
 
+	
 	public  void selectFromDropDownValue(WebElement ele, String value) {
 		try {
 			ele.click();
@@ -172,22 +164,6 @@ public class CommonMethods {
 			TestReport.log(LogStatus.FAIL, "Unable to select " + value + " " + e.getMessage());
 		}
 		}
-		
-		public  void selectFromDropDownValue(WebElement ele, int value) {
-			try {
-				ele.click();
-				wait(1);
-				Select sel = new Select(ele);
-				sel.selectByIndex(value);
-				TestReport.logNoScreen(LogStatus.INFO, value + " selected to dropdown");
-			} catch (Exception e) {
-				TestReport.log(LogStatus.FAIL, "Unable to select " + value + " " + e.getMessage());
-			}
-		
-		
-		
-		
-	}
 
 	public static String captureScreen() {
 		String path;
