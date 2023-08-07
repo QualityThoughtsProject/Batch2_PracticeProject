@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)	
 	@CucumberOptions(
 			features = "FeatureFiles", 
-			glue = "com.cgi.mapfre.stepdefinition",
-			plugin = {"pretty","html:target/Reports"},
-			tags="@Smoke",
+//			glue = "com.cgi.mapfre.stepdefinition",
+//			plugin = {"pretty","html:target/Reports"},
+			tags="@Testcases21",
 			monochrome = true
 	)
 

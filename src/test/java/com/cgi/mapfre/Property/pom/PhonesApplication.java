@@ -50,7 +50,7 @@ import org.openqa.selenium.WebDriver;
 		@FindBy(xpath = "//a[text()='Sort By']")WebElement sortLnk;
 		@FindBy(className = "//select[@class=\'form-select\']")WebElement sortResult;
 		
-		@FindBy(xpath = "//select[@id='input-sort']") private WebElement DropDownlnk;
+		@FindBy(xpath = "//select[@id='input-sort']") WebElement DropDownlnk;
 //		@FindBy(xpath = "//a[text()='Default']")WebElement defaultLnk;
 		
 		@FindBy(xpath = "//a[text()='Name (A - Z)']")WebElement atozLnk;

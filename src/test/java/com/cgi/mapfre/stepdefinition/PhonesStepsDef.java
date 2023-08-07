@@ -303,8 +303,25 @@ public class PhonesStepsDef implements En  {
 		});
 
 
+		When("User select the {string} option", (String string) -> {
+		   
+		});
 
-	
+		Then("sorting should be happen", () -> {
+		   
+		});
+
+		When("User select the {string} option", (String string) -> {
+		  
+		});
+		
+		Then("value should be displayed", () -> {
+		  
+		});
+
+
+
+		
 	}
 
 }
