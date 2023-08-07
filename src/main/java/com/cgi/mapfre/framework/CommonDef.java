@@ -271,15 +271,7 @@ public class CommonDef {
 		}
 	}
 
-	public static void click(WebElement elem) {
-		try {
-			elem.click();
-			TestReport.log(LogStatus.INFO, "Element successfully clicked in the page");
-		} catch (Exception E) {
-			TestReport.log(LogStatus.FAIL, "Elements not located in the page");
-			DriverFactory.getCurrentDriver().quit();
-		}
-	}
+	
 
 	public static void click(WebElement elem, String elementname) {
 		try {

@@ -33,8 +33,7 @@ Feature: OpenCart project
 
   @testcase6
   Scenario: Verify User is able to select the List Option on Desktops Page
-    When User Select the Show All Desktops from Desktops Option
-    And select on the List Option
+    When User select on the List Option from Show All Desktop Option
     Then Products should be displayed in LIST format
 
   @testcase7
@@ -76,14 +75,12 @@ Feature: OpenCart project
 
   @testcase10
   Scenario: Verify User is able to select Apple Cinema 30&quot Option on Desktops Page
-    When User select  the Show All Desktops from Desktops Option
-    And select  Apple Cinema 30&quot Button
+    When  select  Apple Cinema 30&quot Button from Show All Desktops Option
     Then User is able to see the Apple Cinema 30&quot Page
 
   @testcase11
   Scenario: Verify User is able to select Canon EOS 5D Option on Desktop Page
-    When User select  the Show All Desktops from Desktops Option
-    And select Canon EOS 5D Option
+    When User select  the Canon EOS 5D from Show All Desktops Option
     Then User is able to see the Canon EOS 5D Page
 
   @testcase12
