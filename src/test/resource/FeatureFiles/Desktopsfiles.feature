@@ -38,7 +38,8 @@ Feature: OpenCart project
 
   @testcase7
   Scenario: Verify User is able to select the Grid Option on Desktops Page
-    When User select on the Grid Option from Show All Desktop Option
+    When User Select the Show All Desktops from Desktops Option
+    And select on the Grid Option
     Then Products should be displayed in Grid Format
 
   @testcase8
@@ -84,50 +85,60 @@ Feature: OpenCart project
 
   @testcase12
   Scenario: Verify User is able to Select the HP LP3065 Option on Desktops Page
-    When User select the HP LP3065 from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select HP LP3065 Option
     Then User is able to see the HP LP3065 Page
 
   @testcase13
   Scenario: Verify User is able to Select the HTC Touch HD Option on Desktops Page
-    When User select the HTC Touch from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select HTC Touch HD Option
     Then User is able to see the HTC Touch HD Page
 
   @testcase14
   Scenario: Verify User is able to select iPhone Option on Desktops Page
-    When User select the iPhone from Show All Desktops Option
+    When User select the Show All Desktops from Desktops Option
+    And select  iPhone Option
     Then User is able to see the iPhone Page
 
   @testcase15
   Scenario: Verify User is able to select iPod Classic Option on Desktops Page
-    When User select the iPod from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select on the iPod Classic Option
     Then User is able to see the iPod Classic Page
 
   @testcase16
   Scenario: Verify User is able to select the MacBook Option on Desktops Page
-    When User select the MacBook from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select on the MacBook Option
     Then User is able to see the MacBook Page
 
   @testcase17
   Scenario: Verify User is able to select the MacBook Air Option on Desktops Page
-    When User select the MacBook Air from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select on the MacBook Air Option
     Then User is able to see the MacBook Air Page
 
   @testcase18
   Scenario: Verify User is able to select the Palm Treo Pro Option on Desktops Page
-    When User select the Palm Treo Pro from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select on the Palm Treo Pro Air Option
     Then User is able to see the Palm Treo Pro Page
 
   @testcase19
   Scenario: Verify User is able to select the  Product 8 Option on Desktops Page
-    When User select the Product8 from Show All Desktops Option
-    Then User is able to see the Product8 Page
+    When User select  the Show All Desktops from Desktops Option
+    And select on the Product 8 Option
+    Then User is able to see the Product 8 Page
 
   @testcase20
   Scenario: Verify User is able to select the Samsung SyncMaster 941BW Option on Desktop Page
-    When User select the Samsung SyncMaster941BW from Show All Desktops Option
-    Then User is able to see the Samsung SyncMaster941BW Page
+    When User select  the Show All Desktops from Desktops Option
+    And select on the Samsung SyncMaster 941BW Option
+    Then User is able to see the Samsung SyncMaster 941BW Page
 
   @testcase21
   Scenario: Verify User is able to select  the Sony VAIO Option on Desktop Page
-    When User select the Sony VAIO from Show All Desktops Option
+    When User select  the Show All Desktops from Desktops Option
+    And select on the Sony VAIO Option
     Then User is able to see the Sony VAIO Page
