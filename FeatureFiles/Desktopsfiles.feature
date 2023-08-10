@@ -4,44 +4,22 @@ Feature: OpenCart project
     Given User Launch The Application
 
   @Testcase1
-  Scenario: Verify User is able to see the Desktops Option on  OpenCart Page
-    When User Identify the Desktops Option
+  Scenario Outline: Verify User is able to see the Desktops Option on  OpenCart Page
+    When User Identify the Desktops "<Option>"
     Then User is Able to See the Desktops Option
 
+    Examples: 
+      | Option   |
+      | PC       |
+      | MAC      |
+      | Show All |
+
   @Testcase2
-  Scenario: Verify User is able to select the PC Option on Desktops Page
-    When User Select the Desktops Option
-    And User select the PC Option
-    Then User is able to see the PC Page
-
-  @Testcase3
-  Scenario: Verify User is able to select the MAC Option on DesktopsPage
-    When User Select the Desktops Option
-    And User select the MAC Option
-    Then User is able to see the MAC Page
-
-  @Testcase4
   Scenario: Verify User is able to select  the iMac Option on Desktops Page
-    When User Select the Desktops Option
-    And User select  iMac from MAC Option
+    When User Select the iMac from MAC Option
     Then User is able to see the iMac Page
 
-  @testcase5
-  Scenario: Verify User is able to select  the Show All Desktops Option on Desktop Page
-    When User select the Show All Desktops from Desktops Option
-    Then User is able to see the Desktops Page
-
-  @testcase6
-  Scenario: Verify User is able to select the List Option on Desktops Page
-    When User select on the List Option from Show All Desktop Option
-    Then Products should be displayed in LIST format
-
-  @testcase7
-  Scenario: Verify User is able to select the Grid Option on Desktops Page
-    When User select on the Grid Option from Show All Desktop Option
-    Then Products should be displayed in Grid Format
-
-  @testcase8
+  @Testcase3
   Scenario Outline: validating Sorting Feature
     When User search for the desktops products
     And User sort with "<Sort Option>"
@@ -58,7 +36,7 @@ Feature: OpenCart project
       | Model (A - Z)      |
       | Model (Z - A)      |
 
-  @testcase9
+  @Testcase4
   Scenario Outline: validating Sorting Feature
     When User search for the desktops products
     And User sort with "<Show Option>"
@@ -72,62 +50,23 @@ Feature: OpenCart project
       |          75 |
       |         100 |
 
-  @testcase10
-  Scenario: Verify User is able to select Apple Cinema 30&quot Option on Desktops Page
-    When  select  Apple Cinema 30&quot Button from Show All Desktops Option
-    Then User is able to see the Apple Cinema 30&quot Page
+  @Testcase5
+  Scenario Outline: Verify User is able to select Product list
+    When User search for the desktops products
+    And User sort with "<Search Products>"
+    Then User is able to sort the products
 
-  @testcase11
-  Scenario: Verify User is able to select Canon EOS 5D Option on Desktop Page
-    When User select  the Canon EOS 5D from Show All Desktops Option
-    Then User is able to see the Canon EOS 5D Page
-
-  @testcase12
-  Scenario: Verify User is able to Select the HP LP3065 Option on Desktops Page
-    When User select the HP LP3065 from Show All Desktops Option
-    Then User is able to see the HP LP3065 Page
-
-  @testcase13
-  Scenario: Verify User is able to Select the HTC Touch HD Option on Desktops Page
-    When User select the HTC Touch from Show All Desktops Option
-    Then User is able to see the HTC Touch HD Page
-
-  @testcase14
-  Scenario: Verify User is able to select iPhone Option on Desktops Page
-    When User select the iPhone from Show All Desktops Option
-    Then User is able to see the iPhone Page
-
-  @testcase15
-  Scenario: Verify User is able to select iPod Classic Option on Desktops Page
-    When User select the iPod from Show All Desktops Option
-    Then User is able to see the iPod Classic Page
-
-  @testcase16
-  Scenario: Verify User is able to select the MacBook Option on Desktops Page
-    When User select the MacBook from Show All Desktops Option
-    Then User is able to see the MacBook Page
-
-  @testcase17
-  Scenario: Verify User is able to select the MacBook Air Option on Desktops Page
-    When User select the MacBook Air from Show All Desktops Option
-    Then User is able to see the MacBook Air Page
-
-  @testcase18
-  Scenario: Verify User is able to select the Palm Treo Pro Option on Desktops Page
-    When User select the Palm Treo Pro from Show All Desktops Option
-    Then User is able to see the Palm Treo Pro Page
-
-  @testcase19
-  Scenario: Verify User is able to select the  Product 8 Option on Desktops Page
-    When User select the Product8 from Show All Desktops Option
-    Then User is able to see the Product8 Page
-
-  @testcase20
-  Scenario: Verify User is able to select the Samsung SyncMaster 941BW Option on Desktop Page
-    When User select the Samsung SyncMaster941BW from Show All Desktops Option
-    Then User is able to see the Samsung SyncMaster941BW Page
-
-  @testcase21
-  Scenario: Verify User is able to select  the Sony VAIO Option on Desktop Page
-    When User select the Sony VAIO from Show All Desktops Option
-    Then User is able to see the Sony VAIO Page
+    Examples: 
+      | Product List             |
+      | Apple Cinema 30"         |
+      | Canon EOS 5D             |
+      | HP LP3065                |
+      | HTC Touch HD             |
+      | iPhone                   |
+      | iPod Classic             |
+      | MacBook                  |
+      | MacBook Air              |
+      | Palm Treo Pro            |
+      | Product 8                |
+      | Samsung SyncMaster 941BW |
+      | Sony VAIO                |

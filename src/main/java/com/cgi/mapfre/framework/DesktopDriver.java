@@ -19,7 +19,7 @@ public class DesktopDriver {
 
 	static WebDriver remoteDriver = null;
 	
-	public  WebDriver getRemoteDriver(String browser) {
+	public static WebDriver getRemoteDriver(String browser) {
 		
 		try {
 			if (browser.toUpperCase().contains("FIREFOX")) {
