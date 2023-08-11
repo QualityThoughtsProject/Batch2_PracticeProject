@@ -65,16 +65,22 @@ public void user_is_able_to_sort_the_products() {
    
 }
 
-@When("User search for the {string}\" from Show All Desktop")
-public void user_search_for_the_from_show_all_desktop(String Option) {
+@When("User Select the Desktop Options")
+public void user_select_the_desktop_options(String Option) {
+	DesktopsFindPaths menupage=new DesktopsFindPaths(DriverFactory.getCurrentDriver());
+	menupage.clickDesktopsoption(Option);
+    
+}
+@When("User select the {string}\"")
+public void user_select_the(String Option) {
 	DesktopsFindPaths menupage=new DesktopsFindPaths(DriverFactory.getCurrentDriver());
 	menupage.selectProduct(Option);
+   
 }
-@Then("User is able to Search the products List")
-public void user_is_able_to_search_the_products_list() {
+@Then("User is able select the Product List")
+public void user_is_able_select_the_product_list() {
 	DesktopsFindPaths menupage=new DesktopsFindPaths(DriverFactory.getCurrentDriver());
 	menupage.verifyTheProducts();
-	DriverFactory.closeDriver();
     
 }
 

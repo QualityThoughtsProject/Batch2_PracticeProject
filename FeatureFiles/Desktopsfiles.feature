@@ -50,15 +50,16 @@ Feature: OpenCart project
       |          75 |
       |         100 |
 
-  @Testcase5
-  Scenario Outline: Verify User is able to select Product list
-    When User search for the "<Product List>" from Show All Desktop
-    Then User is able to Search the products List
+  @TestCase5
+  Scenario Outline: Validating the Product List Features
+    When User Select the Desktop Options
+    And User select the "<ProductList>"
+    Then User is able select the Product List
 
     Examples: 
-      | Product List             |
-      | Apple Cinema30"         |
-      | Canon EOS5D             |
+      | ProductList              |
+      | Apple Cinema 30"         |
+      | Canon EOS 5D             |
       | HP LP3065                |
       | HTC Touch HD             |
       | iPhone                   |
@@ -66,6 +67,6 @@ Feature: OpenCart project
       | MacBook                  |
       | MacBook Air              |
       | Palm Treo Pro            |
-      | Product8                |
-      | Samsung SyncMaster941BW |
+      | Product 8                |
+      | Samsung SyncMaster 941BW |
       | Sony VAIO                |

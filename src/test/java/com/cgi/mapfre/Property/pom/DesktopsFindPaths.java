@@ -145,12 +145,12 @@ WebDriver driver;
 		}
 	}
 	
-	public void selectProduct(String Option) {
-		DriverFactory.getCurrentDriver().findElement(By.xpath("//a[text()='"+Option+"']")).click();
+	public void selectProduct(String ProductList) {
+		DriverFactory.getCurrentDriver().findElement(By.xpath("//a[text()='"+ProductList+"']")).click();
 	}
 	
 	public void verifyTheProducts() {
-		Assert.assertEquals(appleCinimaLink.getText(), "Product 15");
+		Assert.assertEquals(canonEOS5DLink.getText(), "Product 15");
 	}
 	
 	}
