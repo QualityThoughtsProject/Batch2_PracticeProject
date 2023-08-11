@@ -34,6 +34,7 @@ public class CommonMethods {
 
 	protected static Logger Log = Logger.getLogger(CommonMethods.class.getName());
 
+
 	public static void Explicit_Wait(WebElement element) {
 		System.out.println(element);
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getCurrentDriver(), Duration.ofSeconds(20));
@@ -55,6 +56,16 @@ public class CommonMethods {
 		} catch (NoSuchElementException e) {
 
 			TestReport.log(LogStatus.FAIL, "Element not found " + e.getMessage());
+		}
+	}
+	
+	public static void click(WebElement elem) {
+		try {
+			elem.click();
+			TestReport.log(LogStatus.INFO, "Element successfully clicked in the page");
+		} catch (Exception E) {
+			TestReport.log(LogStatus.FAIL, "Elements not located in the page");
+			DriverFactory.getCurrentDriver().quit();
 		}
 	}
 
@@ -152,7 +163,8 @@ public class CommonMethods {
 
 	}
 
-	public static void selectFromDropDownValue(WebElement ele, String value) {
+	
+	public  static void selectFromDropDownValue(WebElement ele, String value) {
 		try {
 			ele.click();
 			wait(1);
@@ -162,7 +174,7 @@ public class CommonMethods {
 		} catch (Exception e) {
 			TestReport.log(LogStatus.FAIL, "Unable to select " + value + " " + e.getMessage());
 		}
-	}
+		}
 
 	public static String captureScreen() {
 		String path;
