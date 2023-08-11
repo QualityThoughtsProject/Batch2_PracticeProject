@@ -34,11 +34,6 @@ public class CommonMethods {
 
 	protected static Logger Log = Logger.getLogger(CommonMethods.class.getName());
 
-	
-
-	public CommonMethods(Object driverInit) {
-		// TODO Auto-generated constructor stub
-	}
 
 	public static void Explicit_Wait(WebElement element) {
 		System.out.println(element);

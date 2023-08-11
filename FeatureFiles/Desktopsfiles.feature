@@ -52,14 +52,13 @@ Feature: OpenCart project
 
   @Testcase5
   Scenario Outline: Verify User is able to select Product list
-    When User search for the desktops products
-    And User sort with "<Search Products>"
-    Then User is able to sort the products
+    When User search for the "<Product List>" from Show All Desktop
+    Then User is able to Search the products List
 
     Examples: 
       | Product List             |
-      | Apple Cinema 30"         |
-      | Canon EOS 5D             |
+      | Apple Cinema30"         |
+      | Canon EOS5D             |
       | HP LP3065                |
       | HTC Touch HD             |
       | iPhone                   |
@@ -67,6 +66,6 @@ Feature: OpenCart project
       | MacBook                  |
       | MacBook Air              |
       | Palm Treo Pro            |
-      | Product 8                |
-      | Samsung SyncMaster 941BW |
+      | Product8                |
+      | Samsung SyncMaster941BW |
       | Sony VAIO                |

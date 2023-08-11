@@ -4,7 +4,6 @@ package com.cgi.mapfre.Property.pom;
 
 import java.util.List;
 
-import org.apache.poi.hssf.record.PageBreakRecord.Break;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,9 +35,6 @@ WebDriver driver;
 	@FindBy(xpath="//*[@id='product-list']")  private List<WebElement> productListLink;
 	@FindBy(xpath="//select[@id='input-sort']") private  List<WebElement> sortByDropDown;
 	@FindBy(xpath="//select[@id='input-limit']") private List<WebElement> showByDropDown;
-	
-	
-	
 	@FindBy(xpath="//a[text()='Apple Cinema 30\"']") WebElement appleCinimaLink;
 	@FindBy(xpath="//a[text()='Canon EOS 5D']") WebElement canonEOS5DLink;
 	@FindBy(xpath="//a[text()='HP LP3065']") WebElement hpLP3065Link;
@@ -86,9 +82,7 @@ WebDriver driver;
 				
 			}
 		}
-	
-		
-	}
+			}
 	
 	
 	public void addProductToCart(String Option) {
@@ -119,67 +113,14 @@ WebDriver driver;
 					  }else {
 						  TestReport.log(LogStatus.FAIL, showall);
 					  }
-					  CommonMethods.click(addcartlink);
+					  CommonMethods.click(desktopCount);
 					  break;
-					  
-				  
-				  
-				  
 			  }
 		
 		}
-		
-	
-	
-	
-	
-	
-	public void searchForProductList(String Option) {
-		switch(Option) {
-		case"Apple Cinema 30\"":
-			CommonMethods.click(appleCinimaLink);
-			break;
-		case"Canon EOS 5D":
-			CommonMethods.click(canonEOS5DLink);
-			break;
-		case"HP LP3065":
-			CommonMethods.click(hpLP3065Link);
-			break;
-		case"HTC Touch HD":
-			CommonMethods.click(htcTouchLink);
-			break;
-		case"iPhone":
-			CommonMethods.click(iPhoneLink);
-			break;
-		case"iPod Classic":
-			CommonMethods.click(iPodClassicLink);
-			break;
-		case"MacBook":
-			CommonMethods.click(macBookLink);
-			break;
-		case"MacBook Air":
-			CommonMethods.click(macBookAirLink);
-			break;
-		case"Palm Treo Pro":
-			CommonMethods.click(palmTreoproLink);
-			break;
-		case"Product 8":
-			CommonMethods.click(product8Link);
-			break;
-		case"Samsung SyncMaster 941BW":
-			CommonMethods.click(samsungSyncMasterLink);
-			break;
-		case"Sony VAIO":
-			CommonMethods.click(sonyVaioLink);
-			break;
-		default:
-			TestReport.log(LogStatus.INFO,"No Option clicked" );
-			break;
-			
-		}
-		
+	public void addiMacProduct() {
+		Assert.assertEquals(imacTextlink.getText(), "iMac");
 	}
-	
 	
 	public void sortTheItems() {
 		String sortOption[]= {"Default","Name (A - Z)","Name (Z - A)","Price (Low > High)","Price (High > Low)","Rating (Highest)","Rating (Lowest)","Model (A - Z)","Model (Z - A)"};
@@ -187,15 +128,12 @@ WebDriver driver;
 		WebElement dropDown = driver.findElement(By.id("input-sort"));
 		Select sel=new Select(dropDown);
 		List<WebElement> options = sel.getOptions();
-		
 		for(int i = 0; i < options.size(); i++) {
 			System.out.println(options.get(i).getText()+" ->"+sortOption[i]);
 			Assert.assertEquals(options.get(i).getText(), sortOption);
 		}
 		}
-		
-		
-		
+			
 	public void showTheItems() {
 		String sortOption=null;
 	DesktopsFindPaths client=new DesktopsFindPaths(DriverFactory.getCurrentDriver());
@@ -206,8 +144,15 @@ WebDriver driver;
 			System.out.println(sortOption);
 		}
 	}
- 
 	
-}
+	public void selectProduct(String Option) {
+		DriverFactory.getCurrentDriver().findElement(By.xpath("//a[text()='"+Option+"']")).click();
+	}
+	
+	public void verifyTheProducts() {
+		Assert.assertEquals(appleCinimaLink.getText(), "Product 15");
+	}
+	
+	}
   
 
